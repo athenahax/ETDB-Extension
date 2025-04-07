@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Elo Terrorist Database",
+  "version": "04.06.2025",
+  "description": "Labels users on FACEIT matchrooms who are in your Elo Terrorist Database",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://www.faceit.com/*"
+  ],
+  "action": {
+    "default_popup": "src/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.faceit.com/*/cs2/room/*"],
+      "js": ["src/content.js"]
+    }
+  ]
+} 

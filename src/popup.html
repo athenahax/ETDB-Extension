@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EloTerroristDB</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+      width: 300px;
+      padding: 15px;
+    }
+    
+    h1 {
+      font-size: 18px;
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #ff5500;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    button {
+      background-color: #ff5500;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    
+    button:hover {
+      background-color: #e64d00;
+    }
+    
+    .status {
+      margin-top: 15px;
+      padding: 8px;
+      border-radius: 4px;
+    }
+    
+    .status.success {
+      background-color: #dff0d8;
+      color: #3c763d;
+    }
+    
+    .status.error {
+      background-color: #f2dede;
+      color: #a94442;
+    }
+    
+    .status.info {
+      background-color: #d9edf7;
+      color: #31708f;
+    }
+  </style>
+</head>
+<body>
+  <h1>EloTerroristDB</h1>
+  
+  <div class="form-group">
+    <label for="share-code">Share Code</label>
+    <input type="text" id="share-code" placeholder="Enter your share code">
+  </div>
+  
+  <button id="save-button">Save</button>
+  
+  <div id="status" class="status" style="display: none;"></div>
+  
+  <script src="popup.js"></script>
+</body>
+</html> 
