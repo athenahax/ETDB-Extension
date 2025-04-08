@@ -45,7 +45,7 @@ function startPeriodicSync() {
     syncTerroristList().then(() => {
       scanAndMarkPlayers();
     });
-  }, 10000);
+  }, 3000);
 }
 
 function scanAndMarkPlayers() {
@@ -53,13 +53,14 @@ function scanAndMarkPlayers() {
 
   nicknameElements.forEach(element => {
     const nickname = element.textContent.trim();
-    if (eloTerrorists.includes(nickname)) {
-      markPlayerAsTerrorist(element);
+    const terrorist = eloTerrorists.find(user => user.username === nickname);
+    if (terrorist) {
+      markPlayerAsTerrorist(element, terrorist.note);
     }
   });
 }
 
-function markPlayerAsTerrorist(nicknameElement) {
+function markPlayerAsTerrorist(nicknameElement, note) {
   let rosterPlayerElement = nicknameElement;
 
   for (let i = 0; i < 5; i++) {
@@ -75,7 +76,7 @@ function markPlayerAsTerrorist(nicknameElement) {
 
   nicknameElement.style.color = '#FF0000';
   nicknameElement.style.fontWeight = 'bold';
-  nicknameElement.title = 'This player is an ELO TERRORIST';
+  nicknameElement.title = note ? `Reason: ${note}` : 'This player is an ELO TERRORIST';
 }
 
 function addMutationObserver() {
